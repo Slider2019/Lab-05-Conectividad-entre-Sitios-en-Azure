@@ -171,10 +171,10 @@ En esta tarea, **creamos una red virtual de servicios centrales junto con una m�
 ![Creando VM](./images/3.png)
 ![Creando VM](./images/4.png)
 
-1. En la pestaña **Discos**, dejamos los valores predeterminados y seleccionamos **Siguiente: Redes >**.  
-2. En la pestaña **Redes**, para **Red Virtual**, seleccionamos **Crear nuevo**.
+5. En la pestaña **Discos**, dejamos los valores predeterminados y seleccionamos **Siguiente: Redes >**.  
+6. En la pestaña **Redes**, para **Red Virtual**, seleccionamos **Crear nuevo**.
 
-3. Configuramos la red virtual con la siguiente información y luego seleccionamos **OK**.  
+7. Configuramos la red virtual con la siguiente información y luego seleccionamos **OK**.  
    Si es necesario, reemplazamos la información existente.  
 
 | Configuración | Valor |
@@ -186,8 +186,8 @@ En esta tarea, **creamos una red virtual de servicios centrales junto con una m�
 
 ![Creando Red](./images/5.png)
 
-1. Seleccionamos la pestaña **Supervisión**. En **Diagnósticos de arranque**, elegimos **Deshabilitado**.  
-2. Seleccionamos **Revisar y crear**, y luego **Crear**.
+8. Seleccionamos la pestaña **Supervisión**. En **Diagnósticos de arranque**, elegimos **Deshabilitado**.  
+9. Seleccionamos **Revisar y crear**, y luego **Crear**.
 ![Creando Red](./images/6.png)
 ![Creando Red](./images/7.png)
 ![Creando Red](./images/8.png)
@@ -225,9 +225,9 @@ En esta tarea, **creamos una red virtual de manufactura junto con una máquina v
 ![Creando VM](./images/10.png)
 ![Creando VM](./images/11.png)
 
-1. En la pestaña **Discos**, dejamos los valores predeterminados y seleccionamos **Siguiente: Redes >**.  
-2. En la pestaña **Redes**, para **Red virtual**, seleccionamos **Crear nuevo**.  
-3. Configuramos la red virtual con la siguiente información y luego seleccionamos **OK**.  
+4. En la pestaña **Discos**, dejamos los valores predeterminados y seleccionamos **Siguiente: Redes >**.  
+5. En la pestaña **Redes**, para **Red virtual**, seleccionamos **Crear nuevo**.  
+6. Configuramos la red virtual con la siguiente información y luego seleccionamos **OK**.  
    Si es necesario, reemplazamos el rango de direcciones existente.  
 
 | Configuración | Valor |
@@ -239,10 +239,10 @@ En esta tarea, **creamos una red virtual de manufactura junto con una máquina v
 
 ![Creando vnet](./images/12.png)
 
-1. Seleccionamos la pestaña **Supervisión**. En **Diagnóstico de arranque**, elegimos **Deshabilitado**.
+7. Seleccionamos la pestaña **Supervisión**. En **Diagnóstico de arranque**, elegimos **Deshabilitado**.
 ![Creando VM](./images/13.png)
 
-2. Seleccionamos **Revisar y crear**, y luego **Crear**.  
+8. Seleccionamos **Revisar y crear**, y luego **Crear**.  
 ![Creando VM](./images/14.png)
 ![Creando VM](./images/15.png)
 
@@ -274,7 +274,7 @@ Antes de continuar, nos aseguramos de que ambas máquinas virtuales ya se han ap
 
 ![Network Watcher](./images/18.png)
 
-1. Seleccionamos **Ejecutar pruebas de diagnóstico**.
+4. Seleccionamos **Ejecutar pruebas de diagnóstico**.
 
 ![Network Watcher](./images/19.png)
 
@@ -290,8 +290,10 @@ En esta tarea, **creamos un peering de red virtual para habilitar la comunicaci�
 1. En el **Azure Portal**, seleccionamos la red virtual **CoreServicesVnet**.
 ![Peering](./images/20.png)
 ![Peering](./images/21.png)
+
 2. Dentro de **CoreServicesVnet**, en la sección **Configuración**, seleccionamos **Emparejamientos**.
 ![Peering](./images/22.png)
+
 3. En la página de **Emaprejamiento**, seleccionamos **+ Agregar**.
    Si no se especifica algún parámetro, dejamos el valor predeterminado.  
 
@@ -310,12 +312,12 @@ Configuramos los parámetros de la siguiente manera:
 ![Peering](./images/23.png)
 ![Peering](./images/24.png)
 
-1. Hacemos clic en **Agregar**.
+4. Hacemos clic en **Agregar**.
 
-2. En **CoreServicesVnet**, dentro de **Emparejamientos**, verificamos que el peering **CoreServicesVnet-to-ManufacturingVnet** esté listado.  
+5. En **CoreServicesVnet**, dentro de **Emparejamientos**, verificamos que el peering **CoreServicesVnet-to-ManufacturingVnet** esté listado.  
    Refrescamos la página para asegurarnos de que el estado del peering sea **Connected**.
    ![Peering](./images/25.png)
-3. Cambiamos a la red virtual **ManufacturingVnet** y verificamos que el peering **ManufacturingVnet-to-CoreServicesVnet** esté listado.
+6. Cambiamos a la red virtual **ManufacturingVnet** y verificamos que el peering **ManufacturingVnet-to-CoreServicesVnet** esté listado.
 ![Peering](./images/26.png)
    Confirmamos que el estado del peering sea **Connected**.  
    ![Peering](./images/27.png)
@@ -332,16 +334,20 @@ En esta tarea, **volvemos a probar la conexión entre las máquinas virtuales en
 1. **Verificamos la dirección IP privada de la máquina virtual CoreServicesVM**:  
    - Desde el **Azure Portal**, buscamos y seleccionamos la máquina virtual **CoreServicesVM**.
    ![Powershell](./images/28.png)
+   
    - En la pestaña **Información General**, dentro de la sección **Redes**, anotamos la **dirección IP privada** de la máquina.
    ![Powershell](./images/29.png)
+   
    - Esta información será necesaria para realizar la prueba de conexión.  
 
 2. **Probamos la conexión hacia CoreServicesVM desde ManufacturingVM**:  
    - Cambiamos a la máquina virtual **ManufacturingVM**.
    ![Powershell](./images/30.png)
+   
    - En la sección **Operaciones**, seleccionamos **Ejecutar comando**.
    ![Powershell](./images/31.png)
    ![Powershell](./images/32.png)
+   
    - Elegimos **RunPowerShellScript** y ejecutamos el siguiente comando, asegurándonos de usar la dirección IP privada de **CoreServicesVM**:
 
 ![Powershell](./images/33.png)
@@ -354,7 +360,7 @@ En esta tarea, **volvemos a probar la conexión entre las máquinas virtuales en
 
    > ⏳ Nota: Puede tardar un par de minutos en que el script se complete. En la parte superior de la página veremos el mensaje informativo **Ejecución de script en curso...** mientras se ejecuta.  
 
-1. **Validamos el resultado de la prueba**:  
+3. **Validamos el resultado de la prueba**:  
    - La conexión debería ser exitosa, ya que el **peering** entre las redes virtuales ha sido configurado.  
    - El nombre del equipo y la dirección remota que aparezcan en la ventana de PowerShell pueden variar según la configuración, pero el resultado debe indicar que la conexión fue establecida correctamente.  
 
@@ -377,6 +383,7 @@ Se instalará un **appliance de red virtual (NVA)** en la subred de perímetro y
 
 2. Seleccionamos **Subredes** y luego **+ Subred**.
 ![Rutas](./images/38.png)
+
    Nos aseguramos de hacer clic en **Add** para guardar los cambios.  
 
 | Configuración | Valor |
@@ -384,11 +391,11 @@ Se instalará un **appliance de red virtual (NVA)** en la subred de perímetro y
 | Name | **perimeter** |
 | Starting address | **10.0.1.0/24** |
 
-1. En el **Azure Portal**, buscamos y seleccionamos **Tablas de rutas**, luego seleccionamos **+ Crear**.
+3. En el **Azure Portal**, buscamos y seleccionamos **Tablas de rutas**, luego seleccionamos **+ Crear**.
 ![Rutas](./images/39.png)
 ![Rutas](./images/40.png)
 
-2. Ingresamos los siguientes detalles, seleccionamos **Revisar y crear**, y luego **Crear**.  
+4. Ingresamos los siguientes detalles, seleccionamos **Revisar y crear**, y luego **Crear**.  
 
 | Configuración | Valor |
 |---------------|-------|
@@ -401,11 +408,11 @@ Se instalará un **appliance de red virtual (NVA)** en la subred de perímetro y
 ![Rutas](./images/41.png)
 ![Rutas](./images/42.png)
 
-1. Una vez desplegada la tabla de rutas, buscamos y seleccionamos **Route Tables**.  
+5. Una vez desplegada la tabla de rutas, buscamos y seleccionamos **Route Tables**.  
 2. Seleccionamos el recurso (no la casilla) **rt-CoreServices**.
 ![Rutas](./images/43.png)
 
-3. Expandimos **Configuración**, luego seleccionamos **Rutas** y después **+ Agregar**.
+6. Expandimos **Configuración**, luego seleccionamos **Rutas** y después **+ Agregar**.
 ![Rutas](./images/44.png)
 
    Creamos una ruta desde un futuro **Network Virtual Appliance (NVA)** hacia la red virtual de servicios centrales.
@@ -420,10 +427,10 @@ Se instalará un **appliance de red virtual (NVA)** en la subred de perímetro y
 
 ![Rutas](./images/45.png)
 
-1. Seleccionamos **Add**.
+7. Seleccionamos **Add**.
 ![Rutas](./images/46.png)
 
-2. Finalmente, asociamos la ruta con la subred:  
+8. Finalmente, asociamos la ruta con la subred:  
    - Seleccionamos **Subnets** y luego **+ Associate**.
    ![Rutas](./images/47.png)
    - Completamos la configuración con la siguiente información:  
