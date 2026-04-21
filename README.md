@@ -66,7 +66,7 @@ Cada red virtual aloja máquinas virtuales que representan aplicaciones y servic
 
 ## Esquema Visual del Laboratorio
 
-![Esquema Laboratorio](./Esquemalab5.png)
+![Esquema Laboratorio](./images/Esquemalab5.png)
 
 - **Tarea 1: Crear una máquina virtual en una red virtual.**
 - **Tarea 2: Crear una máquina virtual en una red virtual diferente.**
@@ -122,7 +122,7 @@ Los siguientes valores se basan en la **calculadora de precios de Azure** y en l
 
 A continuación se muestra un gráfico de barras con el desglose de costos por recurso:
 
-![Grafico costos](./costolab.png)
+![Grafico costos](./images/costolab.png)
 
 ---
 
